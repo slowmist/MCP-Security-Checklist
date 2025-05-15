@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/slowmist-mcp-security-checklist-badge.png)](https://mseep.ai/app/slowmist-mcp-security-checklist)
+
 # MCP Security Checklist: A Security Guide for the AI Tool Ecosystem
 
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/slowmist_team.svg?style=social&label=Follow%20%40SlowMist_Team)](https://twitter.com/slowmist_team) 
