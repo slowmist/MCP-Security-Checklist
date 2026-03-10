@@ -286,6 +286,7 @@ This checklist is based on possible risk points encountered during our security 
 ## MCP Security Self-Assessment Tools
 > **Note:** For most MCP applications, you can use the following security tools to perform scans and quickly detect high-risk issues automatically.
 - [Tencent: AI Infrastructure Security Assessment System](https://github.com/Tencent/AI-Infra-Guard)
+- [SpiderShield: MCP Server Security Scanner & Runtime Guard](https://github.com/teehooai/spidershield) - Static analysis linter that detects 46 vulnerability patterns (reverse shells, credential theft, prompt injection, SSRF), scores tool description quality, and provides runtime policy enforcement with DLP and audit logging.
 
 **[⬆ Back to Top](#-table-of-contents)**
 
