@@ -287,6 +287,7 @@
 ## MCP 安全自查工具
 > **说明:** 对于大部分 MCP 应用，可以使用下面安全工具进行扫描，实现对一些高威胁问题的快速自动发现。
 - [Tencent: AI Infrastructure Security Assessment System](https://github.com/Tencent/AI-Infra-Guard)
+- [SpiderShield: MCP 服务器安全扫描 & 运行时防护](https://github.com/teehooai/spidershield) - 静态安全扫描工具，检测46种漏洞模式（反弹Shell、凭证窃取、Prompt注入、SSRF），评估工具描述质量，并提供运行时策略引擎 + DLP + 审计日志。
 
 **[⬆ 返回顶部](#-目录)**
 
