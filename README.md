@@ -60,6 +60,7 @@ This checklist is based on possible risk points encountered during our security 
 
 - [ ] **Access Control:** ![High][high_img] Implement role-based access control, limit resource access, and enforce the principle of least privilege.
 - [ ] **Credential Management:** ![High][high_img] Securely manage and store service credentials; avoid hard-coded secrets and use key management services.
+  > *Real-world example:* In NVIDIA NemoClaw, API keys were passed as CLI arguments to subprocess calls, making them visible to all system users via `ps aux` ([NemoClaw PR #330](https://github.com/NVIDIA/NemoClaw/pull/330)).
 - [ ] **External Service Authentication:** ![High][high_img] Use secure methods when authenticating with third-party services.
 - [ ] **Least Privilege:** ![Medium][medium_img] Run service processes with the minimum required permissions to reduce the potential attack surface and elevation risks.
 - [ ] **API Key Rotation:** ![Medium][medium_img] Automatically rotate API keys and service credentials periodically, limiting the valid timeframe of keys.
@@ -76,6 +77,7 @@ This checklist is based on possible risk points encountered during our security 
 ### Deployment & Runtime Security
 
 - [ ] **Isolation Environment:** ![High][high_img] Server runs in an isolated environment (container, VM, or sandbox) to prevent escape and mitigate lateral movement attacks.
+  > *Real-world example:* In NVIDIA NemoClaw, network policy presets without binary restrictions allowed any process (e.g., `curl`, `python3`, `wget`) to exfiltrate data to permitted endpoints ([NemoClaw #272](https://github.com/NVIDIA/NemoClaw/issues/272)).
 - [ ] **Container Security:** ![High][high_img] Adopt hardened container security configurations and run containers as non-root users. Employ immutable infrastructure and runtime protection.
 - [ ] **Secure Boot:** ![Medium][medium_img] Validate service boot processes, implementing secure boot chains and integrity checks.
 - [ ] **Environment Variable Security:** ![Medium][medium_img] Protect sensitive environment variables and ensure they are not exposed in logs.
@@ -91,6 +93,7 @@ This checklist is based on possible risk points encountered during our security 
 
 - [ ] **Dependency Management:** ![High][high_img] Securely manage third-party dependencies.
 - [ ] **Package Integrity:** ![High][high_img] Verify the integrity and authenticity of packages.
+  > *Real-world example:* In NVIDIA NemoClaw, blueprint artifact verification silently passed on empty digests, allowing unsigned or tampered artifacts to be accepted ([NemoClaw PR #319](https://github.com/NVIDIA/NemoClaw/pull/319), [PR #448](https://github.com/NVIDIA/NemoClaw/pull/448)).
 - [ ] **Source Verification:** ![Medium][medium_img] Validate the source of all code and dependencies.
 - [ ] **Secure Build:** ![Medium][medium_img] Ensure the build process is secure.
 
@@ -136,6 +139,7 @@ This checklist is based on possible risk points encountered during our security 
 - [ ] **Secure Coding Practices:** ![High][high_img] Adhere to security coding standards and best practices.
 - [ ] **Tool Isolation:** ![High][high_img] Execute tools in a controlled environment to prevent system-level impact.
 - [ ] **Input Validation:** ![High][high_img] Strictly validate all inputs from clients.
+  > *Real-world example:* In NVIDIA NemoClaw, shell command construction with unsanitized user input in agent bridge scripts allowed command injection via a Telegram integration ([NemoClaw #118](https://github.com/NVIDIA/NemoClaw/issues/118)).
 - [ ] **Tool Permission Control:** ![High][high_img] Each tool should have only the minimum permissions needed to complete its task.
 - [ ] **Data Validation:** ![High][high_img] Validate the data processed by tools to prevent injection or tampering.
 - [ ] **Tool Behavior Constraints:** ![High][high_img] Restrict the range and types of actions a tool can perform.
@@ -294,6 +298,7 @@ This checklist is based on possible risk points encountered during our security 
 ## References
 - [Model Context Protocol (MCP) GitHub](https://github.com/modelcontextprotocol/modelcontextprotocol)
 - [Hou, X., Zhao, Y., Wang, S., & Wang, H. (2025). Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions. *arXiv preprint arXiv:2503.23278*.](https://doi.org/10.48550/arXiv.2503.23278)
+- [NVIDIA NemoClaw — Security findings from agentic AI tool-use auditing (GTC 2026)](https://github.com/NVIDIA/NemoClaw)
 
 [low_img]: assets/priority/low.svg  
 [medium_img]: assets/priority/medium.svg  
