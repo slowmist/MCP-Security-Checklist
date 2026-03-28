@@ -286,6 +286,8 @@ This checklist is based on possible risk points encountered during our security 
 ## MCP Security Self-Assessment Tools
 > **Note:** For most MCP applications, you can use the following security tools to perform scans and quickly detect high-risk issues automatically.
 - [Tencent: AI Infrastructure Security Assessment System](https://github.com/Tencent/AI-Infra-Guard)
+- [agentpass-pentest: MCP/Agent Security Testing Tool](https://github.com/razashariff/agentpass-pentest) — 16 security tests mapped to OWASP MCP Top 10, with Semgrep rules, Sigma detection rules, Nmap NSE scripts, and OWASP ZAP scan scripts
+- [DVMCP: Damn Vulnerable MCP Server](https://github.com/razashariff/dvmcp) — Deliberately insecure MCP server for security testing and scanner validation
 
 **[⬆ Back to Top](#-table-of-contents)**
 
