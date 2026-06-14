@@ -287,6 +287,7 @@
 ## MCP 安全自查工具
 > **说明:** 对于大部分 MCP 应用，可以使用下面安全工具进行扫描，实现对一些高威胁问题的快速自动发现。
 - [Tencent: AI Infrastructure Security Assessment System](https://github.com/Tencent/AI-Infra-Guard)
+- [mcp-audit: Open-source MCP server configuration scanner](https://github.com/adudley78/mcp-audit)
 
 **[⬆ 返回顶部](#-目录)**
 
