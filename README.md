@@ -286,6 +286,7 @@ This checklist is based on possible risk points encountered during our security 
 ## MCP Security Self-Assessment Tools
 > **Note:** For most MCP applications, you can use the following security tools to perform scans and quickly detect high-risk issues automatically.
 - [Tencent: AI Infrastructure Security Assessment System](https://github.com/Tencent/AI-Infra-Guard)
+- [mcp-audit: Open-source MCP server configuration scanner](https://github.com/adudley78/mcp-audit)
 
 **[⬆ Back to Top](#-table-of-contents)**
 
