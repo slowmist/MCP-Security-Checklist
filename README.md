@@ -234,6 +234,18 @@ This checklist is based on possible risk points encountered during our security 
 - [ ] **Dynamic Risk Assessment:** ![Medium][medium_img] Dynamically adjust auto-approve policies based on context.
 - [ ] **Approval Process Auditing:** ![Medium][medium_img] Log and audit all auto-approval decisions.
 
+### Pre-execution Tool Call Authorization
+
+> **Note:** Sandboxing and least privilege bound *what* a tool is able to do, and auto-approve rules decide *which tools* may run without confirmation — but neither evaluates whether a specific call, with its specific arguments, in its current context, should execute. A prompt-injected model can drive tool calls that are each within granted permissions yet harmful in combination or intent. An authorization check enforced outside the model closes this gap.
+
+- [ ] **Pre-execution Authorization:** ![High][high_img] Evaluate every tool call against policy before it executes, at an enforcement point independent of the model and the tool (e.g., an endpoint agent or local gateway), so that a manipulated model cannot bypass the check.
+- [ ] **Argument-aware Decisions:** ![High][high_img] Base authorization on the full call — tool name, arguments (target paths, URLs, amounts), and session context — not on tool identity alone.
+- [ ] **Escalation to Human Review:** ![Medium][medium_img] Route high-risk calls that policy cannot conclusively allow or deny to a human approver instead of defaulting to execution.
+- [ ] **Fail-closed Behavior:** ![Medium][medium_img] If the authorization mechanism is unavailable or times out, deny high-risk tool calls by default.
+- [ ] **Decision Audit Trail:** ![Medium][medium_img] Record every authorization decision — allowed, blocked, or escalated — together with the call context, for incident investigation.
+
+> Example implementation: [Certiv](https://certiv.ai) enforces pre-execution authorization of agent tool calls at the endpoint.
+
 ### Sampling Security
 
 - [ ] **Context Inclusion Control:** ![High][high_img] Strictly control the scope of context included in sampling requests.
