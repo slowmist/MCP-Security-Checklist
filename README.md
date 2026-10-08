@@ -298,3 +298,7 @@ This checklist is based on possible risk points encountered during our security 
 [low_img]: assets/priority/low.svg  
 [medium_img]: assets/priority/medium.svg  
 [high_img]: assets/priority/high.svg
+
+## Automated schema and endpoint checks
+
+- [mcpdoctor](https://github.com/xka0085-byte/mcp-doctor) — read-only MCP initialize/	ools/list schema checker and x402 HTTP 402 endpoint inspector. Use it in CI before an agent depends on an endpoint. [Documentation](https://xka0085-byte.github.io/mcp-doctor/)
